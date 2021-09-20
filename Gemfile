@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'hamlit'
 gem 'annotate'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
