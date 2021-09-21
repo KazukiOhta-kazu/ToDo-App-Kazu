@@ -1,0 +1,21 @@
+input {
+  &.text {
+    background: #F4F4F4;
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: 4px;
+    border-radius: 10px;
+    border: none;
+  }
+}
+
+label {
+  &.mark {
+    display: inline-block;
+    margin-top: 33px;
+  }
+}
+
+.cancel-account {
+  margin-top: 60px;
+}
