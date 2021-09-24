@@ -9,6 +9,19 @@ input {
   }
 }
 
+textarea {
+  &.area {
+    background: #F4F4F4;
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: 4px;
+    border-radius: 10px;
+    min-height: 200px;
+    resize: vertical;
+    border: none;
+  }
+}
+
 label {
   &.mark {
     display: inline-block;
