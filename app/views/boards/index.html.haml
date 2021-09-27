@@ -1,0 +1,12 @@
+.container
+  %h2.index_title All Boards
+
+  - @boards.each do |board|
+    .card
+      .card_detail
+        .card_title
+          = board.title
+        .card_content
+          = board.content
+
+  = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
