@@ -1,6 +1,8 @@
 class BoardsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
+
   def index
+    @boards = Board.all
   end
 
   def show
