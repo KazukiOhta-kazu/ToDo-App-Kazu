@@ -31,6 +31,7 @@ class BoardsController < ApplicationController
       redirect_to board_path(@board)
     else
       render :edit
+    end
   end
 
   private

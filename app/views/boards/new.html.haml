@@ -1,5 +1,5 @@
 .container
-  %h2 New Card
+  %h2 New Board
   = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
     %div
       = f.label :title, 'Name', class: 'mark'
