@@ -1,0 +1,12 @@
+.container
+  %h2 Edit Board
+  = form_with(model: @board, url: board_path, method: 'patch', local: true) do |f|
+    %div
+      = f.label :title, 'Name', class: 'mark'
+    %div
+      = f.text_field :title, class: 'text'
+    %div
+      = f.label :content, 'Description', class: 'mark'
+    %div
+      = f.text_area :content, class: 'area'
+    = f.submit 'Submit', class: 'btn-submit'
