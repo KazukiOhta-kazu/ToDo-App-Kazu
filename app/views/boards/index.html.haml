@@ -9,6 +9,6 @@
         .card_content
           = board.content
         .card_user
-          = image_tag current_user.profile.avatar
+          = image_tag board.user.avatar_image
 
   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }

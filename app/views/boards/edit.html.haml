@@ -1,6 +1,6 @@
 .container
-  %h2 New Board
-  = form_with(model: @board, url: boards_path, method: 'post', local: true) do |f|
+  %h2 Edit Board
+  = form_with(model: @board, url: board_path, method: 'patch', local: true) do |f|
     %div
       = f.label :title, 'Name', class: 'mark'
     %div
