@@ -6,17 +6,24 @@
   background: #F4F4F4;
   border-radius: 10px;
   margin-top: 25px;
+
+  &_detail {
+    padding: 20px 15px;
+  }
+
+  &_title {
+    font-size: 18px;
+  }
+
+  &_content {
+    margin-top: 6px;
+    opacity: 0.4;
+  }
+
+  &_user {
+    margin-top: 20px;
+  }
 }
 
-.card_detail {
-  padding: 20px 15px;
-}
 
-.card_title {
-  font-size: 18px;
-}
 
-.card_content {
-  margin-top: 6px;
-  opacity: 0.4;
-}
