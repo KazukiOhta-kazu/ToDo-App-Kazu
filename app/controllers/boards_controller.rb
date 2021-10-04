@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @board = Board.find(params[:id])
   end
 
   def new
@@ -32,6 +33,12 @@ class BoardsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    article = current_user.boards.find(params[:id])
+    article.destroy!
+    redirect_to root_path
   end
 
   private
