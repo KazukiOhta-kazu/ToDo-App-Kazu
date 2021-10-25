@@ -16,10 +16,12 @@ class TasksController < ApplicationController
   end
 
   def show
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
   end
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline)
+    params.require(:task).permit(:title, :content, :deadline, :eyecatch)
   end
 end
