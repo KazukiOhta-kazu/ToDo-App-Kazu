@@ -14,3 +14,12 @@
         = @task.deadline
       .card_user
         = image_tag @task.user.avatar_image
+
+  %h2.comment_title Comment
+
+  - @comments.each do |comment|
+    .comment 
+      .comment_user 
+        = image_tag comment.user.avatar_image
+      .comment_contnt
+        = comment.content

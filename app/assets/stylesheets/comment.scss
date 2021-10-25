@@ -1,0 +1,18 @@
+.comment_title {
+  margin: 35px 0;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &_user {
+    margin-right: 16px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
