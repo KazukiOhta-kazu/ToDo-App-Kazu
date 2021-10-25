@@ -1,5 +1,16 @@
 .container
   %h2.page_title= @task.title
 
-  .card 
-    = @task.content
+  .card
+    .card_detail
+      - if @task.eyecatch.attached?
+        .card_eyecatch
+          = image_tag @task.eyecatch 
+      .card_title
+        = @task.title
+      .card_content
+        = @task.content
+      .card_deadline
+        = @task.deadline
+      .card_user
+        = image_tag @task.user.avatar_image
