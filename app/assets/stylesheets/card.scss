@@ -1,4 +1,4 @@
-.index_title {
+.page_title {
   margin-bottom: 35px;
 }
 
@@ -16,6 +16,11 @@
   }
 
   &_content {
+    margin-top: 6px;
+    opacity: 0.4;
+  }
+
+  &_deadline {
     margin-top: 6px;
     opacity: 0.4;
   }
