@@ -2,6 +2,16 @@
   margin-bottom: 35px;
 }
 
+.card_eyecatch {
+  
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 27px;
+  }
+}
+
 .card {
   background: #F4F4F4;
   border-radius: 10px;
@@ -9,16 +19,6 @@
 
   &_detail {
     padding: 20px 15px;
-  }
-
-  &_eyecatch {
-
-    img {
-      height: 100%;
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 27px;
-    }
   }
 
   &_title {
