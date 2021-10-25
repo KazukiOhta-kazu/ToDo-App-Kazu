@@ -1,11 +1,12 @@
 .container
   %h2.page_title= @task.title
 
+  - if @task.eyecatch.attached?
+    .card_eyecatch
+      = image_tag @task.eyecatch 
+
   .card
     .card_detail
-      - if @task.eyecatch.attached?
-        .card_eyecatch
-          = image_tag @task.eyecatch 
       .card_title
         = @task.title
       .card_content
@@ -14,3 +15,12 @@
         = @task.deadline
       .card_user
         = image_tag @task.user.avatar_image
+
+  %h2.comment_title Comment
+
+  - @comments.each do |comment|
+    .comment 
+      .comment_user 
+        = image_tag comment.user.avatar_image
+      .comment_contnt
+        = comment.content
