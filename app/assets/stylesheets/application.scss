@@ -5,6 +5,7 @@
 @import 'card';
 @import 'profile';
 @import 'comment';
+@import 'dropdown';
 
 html {
   word-spacing: 1px;
@@ -28,6 +29,7 @@ body {
   background-color: $base-bg-color;
   font-size: 1em;
   color: $text-base-color;
+  word-break: break-word;
 }
 
 a {
