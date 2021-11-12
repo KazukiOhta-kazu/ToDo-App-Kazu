@@ -1,4 +1,7 @@
 .container
+  %ul 
+    - @task.errors.full_messages.each do |message|
+      %li= message
   %h2 New Card
   = form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f|
     %div

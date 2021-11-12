@@ -14,6 +14,9 @@
 #  index_boards_on_user_id  (user_id)
 #
 class Board < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+
   belongs_to :user
   has_many :tasks, dependent: :destroy
 end
