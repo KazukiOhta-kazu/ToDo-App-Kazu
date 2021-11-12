@@ -2,6 +2,7 @@
   width: 40px;
   height: 40px;
   position: relative;
+  z-index: 10;
 }
 
 .login_user {
@@ -24,10 +25,15 @@
   display: block;
 }
 
-.Profile_btn {
-  margin-bottom: 5px;
+.bottom_btn {
+  margin-top: 5px;
 }
 
 .dropdown:hover .dropdown_content {
   display: block;
+}
+
+.index_dropdown {
+  background: #FFF;
+  top: 45px;
 }

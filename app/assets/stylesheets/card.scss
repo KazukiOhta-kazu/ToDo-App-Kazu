@@ -1,5 +1,15 @@
-.page_title {
-  margin-bottom: 35px;
+.page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_right {
+
+    img {
+      width: 24px;
+      height: 6px;
+    }
+  }
 }
 
 .card_eyecatch {
@@ -21,8 +31,21 @@
     padding: 20px 15px;
   }
 
+  &_top {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &_title {
     font-size: 18px;
+  }
+
+  &_right {
+
+    img {
+      width: 24px;
+      height: 6px;
+    }
   }
 
   &_content {
@@ -41,9 +64,23 @@
     img {
       width: 30px;
       height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
     }
   }
 }
 
+.show_eyecatch {
+  img {
+    margin-top: 25px;
+    margin-bottom: 0;
+  }
+}
 
-
+.page_new {
+  display: block;
+  text-align: center;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  margin-top: 25px;
+}

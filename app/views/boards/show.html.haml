@@ -1,20 +1,30 @@
 .container
-  %h2.page_title= @board.title
+  .page
+    %h2.page_title= @board.title
 
   - @tasks.each do |task|
     .card
       .card_detail
         - if task.eyecatch.attached?
           .card_eyecatch
-            = image_tag task.eyecatch 
-        .card_title
-          = task.title
-        .card_content
-          = task.content
-        .card_deadline
-          = task.deadline
-        .card_user
-          = image_tag task.user.avatar_image
+            = image_tag task.eyecatch
+        .card_top
+          .card_title
+            = task.title
+          .dropdown
+            .card_right 
+              = image_tag 'actions.svg'
+            .dropdown_content.index_dropdown
+              = link_to 'detail', board_task_path(task.board, task)
+              - if user_signed_in? && current_user.has_task_written?(task)
+                = link_to 'edit', edit_board_task_path(task.board, task), class: 'bottom_btn'
+                = link_to 'delete', board_task_path(task.board, task), data: {method: 'delete'}, class: 'bottom_btn'
+        = link_to board_task_path(task.board, task) do
+          .card_content
+            = task.content
+          .card_deadline
+            = task.deadline
+          .card_user
+            = image_tag task.user.avatar_image
 
-= link_to '編集する', edit_board_path(@board)
-= link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか' }
+  = link_to '+ Add new task', new_board_task_path(@board), class: 'page_new'

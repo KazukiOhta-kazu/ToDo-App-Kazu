@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+
   def new
     board = Board.find(params[:board_id])
     @task = board.tasks.build
@@ -19,6 +21,25 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.find(params[:id])
     @comments = @task.comments
+  end
+
+  def edit
+    @task = current_user.tasks.find(params[:id])
+  end
+
+  def update
+    @task = current_user.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_task_path(@task.board, @task)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    task = current_user.tasks.find(params[:id])
+    task.destroy!
+    redirect_to board_path(task.board)
   end
 
   private
