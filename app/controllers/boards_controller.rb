@@ -17,8 +17,9 @@ class BoardsController < ApplicationController
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to board_path(@board)
+      redirect_to board_path(@board), notice: '保存に成功しました'
     else
+      flash.now[:error] = '保存に失敗しました'
       render :new
     end
   end
@@ -30,16 +31,17 @@ class BoardsController < ApplicationController
   def update
     @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
-      redirect_to board_path(@board)
+      redirect_to board_path(@board), notice: '更新に成功しました'
     else
+      flash.now[:error] = '更新に失敗しました'
       render :edit
     end
   end
 
   def destroy
-    article = current_user.boards.find(params[:id])
-    article.destroy!
-    redirect_to root_path
+    board = current_user.boards.find(params[:id])
+    board.destroy!
+    redirect_to root_path, notice: '削除に成功しました'
   end
 
   private
