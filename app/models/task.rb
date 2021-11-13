@@ -22,6 +22,7 @@ class Task < ApplicationRecord
 
   validates :content, presence: true
   validates :title, length: { maximum: 100 }
+  validates :content, uniqueness: true
 
   belongs_to :user
   belongs_to :board
