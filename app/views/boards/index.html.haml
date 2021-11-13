@@ -14,7 +14,7 @@
               = link_to 'detail', board_path(board)
               - if user_signed_in? && current_user.has_board_written?(board)
                 = link_to 'edit', edit_board_path(board), class: 'bottom_btn'
-                = link_to 'delete', board_path(board), data: {method: 'delete'}, class: 'bottom_btn'
+                = link_to 'delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }, class: 'bottom_btn'
         = link_to board_path(board) do
           .card_content
             = board.content
