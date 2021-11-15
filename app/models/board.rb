@@ -23,4 +23,8 @@ class Board < ApplicationRecord
 
   belongs_to :user
   has_many :tasks, dependent: :destroy
+
+  def created_updated_at
+    I18n.l(self.updated_at, format: :default)
+  end
 end

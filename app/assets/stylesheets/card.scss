@@ -59,14 +59,27 @@
   }
 
   &_user {
+    display: flex;
     margin-top: 20px;
+    position: relative;
+  }
+
+  &_user_image {
+    width: 30px;
+    height: 30px;
 
     img {
+      position: absolute;
+      top: 25%;
       width: 30px;
       height: 30px;
       border-radius: 50%;
       object-fit: cover;
     }
+  }
+  
+  &_user_information {
+      margin-left: 10px;
   }
 }
 

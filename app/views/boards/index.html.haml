@@ -19,6 +19,12 @@
           .card_content
             = board.content
           .card_user
-            = image_tag board.user.avatar_image
+            .card_user_image
+              = image_tag board.user.avatar_image
+            .card_user_information
+              = board.user.display_name
+              %br
+              = board.created_updated_at
+
 
   = link_to '+ Add new board', new_board_path, class: 'page_new'

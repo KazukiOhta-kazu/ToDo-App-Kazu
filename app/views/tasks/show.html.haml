@@ -15,7 +15,12 @@
         %p deadline
         = @task.display_deadline
       .card_user
-        = image_tag @task.user.avatar_image
+        .card_user_image
+          = image_tag @task.user.avatar_image
+        .card_user_information 
+          = @task.user.display_name
+          %br
+          = @task.created_updated_at
 
   %h2.comment_title Comment
 

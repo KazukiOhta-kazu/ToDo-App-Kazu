@@ -32,4 +32,8 @@ class Task < ApplicationRecord
   def display_deadline
     I18n.l(self.deadline, format: :long)
   end
+
+  def created_updated_at
+    I18n.l(self.updated_at, format: :default)
+  end
 end
