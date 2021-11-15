@@ -23,7 +23,8 @@
           .card_content
             = task.content
           .card_deadline
-            = task.deadline
+            %p deadline
+            = task.display_deadline
           .card_user
             = image_tag task.user.avatar_image
 
