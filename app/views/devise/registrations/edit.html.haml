@@ -1,6 +1,5 @@
 .container
-  %h2
-    Edit #{resource_name.to_s.humanize}
+  %h2 会員登録情報の変更・退会
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
@@ -12,26 +11,26 @@
         Currently waiting confirmation for: #{resource.unconfirmed_email}
     .field
       = f.label :password, class: 'mark'
-      %i (leave blank if you don't want to change it)
       %br/
-      = f.password_field :password, autocomplete: "new-password", class: 'text'
       - if @minimum_password_length
-        %br/
         %em
-          = @minimum_password_length
-          characters minimum
+          ( #{@minimum_password_length}文字以上で入力して下さい。 )
+        %br/
+      %i (変更しない場合は空白にしてください。)
+      = f.password_field :password, autocomplete: "new-password", class: 'text'
     .field
-      = f.label :password_confirmation, class: 'mark'
+      = f.label :password_confirmation, "パスワード ( 確認用 ）", class: 'mark'
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
     .field
       = f.label :current_password, class: 'mark'
-      %i (we need your current password to confirm your changes)
+      %br/
+      %i (ユーザー情報を変更するには現在のパスワードが必要です。)
       %br/
       = f.password_field :current_password, autocomplete: "current-password", class: 'text'
     .actions
       = f.submit "Submit", class: 'btn-submit'
-  %h3.cancel-account Cancel my account
-  %p
-    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn-cancel'}
-  = link_to "Back", :back
+  %h3.cancel-account 退会手続き
+  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "本当に退会してもよろしいですか？" }, method: :delete, class: 'btn-cancel'
+  -# %p
+  -#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn-cancel'}
