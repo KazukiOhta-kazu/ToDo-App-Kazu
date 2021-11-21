@@ -14,6 +14,17 @@
 #  index_boards_on_user_id  (user_id)
 #
 class Board < ApplicationRecord
+  validates :title, presence: true
+  validates :title, length: { maximum: 10 }
+
+  validates :content, presence: true
+  validates :title, length: { maximum: 100 }
+  validates :content, uniqueness: true
+
   belongs_to :user
   has_many :tasks, dependent: :destroy
+
+  def created_updated_at
+    I18n.l(self.updated_at, format: :default)
+  end
 end

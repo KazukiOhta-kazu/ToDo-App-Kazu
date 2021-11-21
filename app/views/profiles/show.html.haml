@@ -1,5 +1,5 @@
 .container
-  %h2 Profile Page
+  %h2 プロフィール
   .profilePage_user_image
     %p プロフィール画像
     = image_tag current_user.avatar_image
@@ -10,3 +10,7 @@
     .profilePage_user_introduction
       %p 自己紹介
       = current_user.profile&.introduction
+  %div.link_edit_user
+    = link_to 'プロフィールの編集', edit_profile_path, class: 'link_edit_profile'
+    %br/
+    = link_to '会員登録情報の変更・退会', edit_user_registration_path

@@ -1,0 +1,39 @@
+.dropdown {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.login_user {
+  position: absolute;
+  right: 20px;
+}
+
+.dropdown_content {
+  background: #F4F4F4;
+  width: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  display: none;
+}
+
+.dropdown_content a {
+  display: block;
+}
+
+.bottom_btn {
+  margin-top: 5px;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+.index_dropdown {
+  background: #FFF;
+  top: 45px;
+}

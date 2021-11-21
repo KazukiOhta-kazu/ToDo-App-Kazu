@@ -42,4 +42,12 @@ class User < ApplicationRecord
   def display_name
     profile&.nickname || email.split('@').first
   end
+
+  def has_board_written?(board)
+    boards.exists?(id: board.id)
+  end
+
+  def has_task_written?(task)
+    tasks.exists?(id: task.id)
+  end
 end

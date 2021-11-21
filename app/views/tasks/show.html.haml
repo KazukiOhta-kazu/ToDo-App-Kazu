@@ -1,20 +1,26 @@
 .container
-  %h2.page_title= @task.title
+  .page
+    %h2.page_title= @task.title
 
   - if @task.eyecatch.attached?
     .card_eyecatch
-      = image_tag @task.eyecatch 
+      .show_eyecatch
+        = image_tag @task.eyecatch
 
   .card
     .card_detail
-      .card_title
-        = @task.title
       .card_content
         = @task.content
       .card_deadline
-        = @task.deadline
+        %p deadline
+        = @task.display_deadline
       .card_user
-        = image_tag @task.user.avatar_image
+        .card_user_image
+          = image_tag @task.user.avatar_image
+        .card_user_information 
+          = @task.user.display_name
+          %br
+          = @task.created_updated_at
 
   %h2.comment_title Comment
 
@@ -24,3 +30,5 @@
         = image_tag comment.user.avatar_image
       .comment_contnt
         = comment.content
+
+  = link_to '+ Add new comment', new_board_task_comment_path(@task.board, @task), class: 'page_new'

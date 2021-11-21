@@ -1,4 +1,7 @@
 .container
+  %ul 
+    - @comment.errors.full_messages.each do |message|
+      %li= message
   %h2 New Comment
   = form_with(model: @comment, url: board_task_comments_path(@comment.task.board, @comment.task), method: 'post', local: true) do |f|
     %div
